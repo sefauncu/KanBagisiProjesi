@@ -14,9 +14,9 @@ Primefaces componentinden faydalanılmıştır.
 # Kullanılan Programlar
 Uygulamayı şuan için localde çalıştırabilirsiniz.Bunun için öncelikle localde çalışmak için bilgisayarınıza server(wamp,xampp..) kurun. Daha sonra java ee geliştirmek için uygun eclipse ide kurmanız gerekmekte. Son olarak kurduğunuz eclipse ide'ye apache tomcat server kurulumu yapmanız gerekmekte.
 
-# Uygulamanın çalıştırılması
+# Uygulamanın Çalıştırılması
 Projeyi indirdikten sonra eclipse ile import ederek uygulamayı eclipse de görebilirsiniz.
 Java Resources/properties/META-INF/persistence.xml dosyasında gerekli veritabanı konfigurasyonunu kendinize göre ayarlayın. Bunun için mysqlde yeni bir veritabanı oluşturmanız gerekmekte. Benim oluşturdugum veritabanı ismi 'kanbagis'. Siz persistence.xml'de bunu kendi veritabınınızla değiştirin. Sonrasında WebContent/bagisci/index.php dosyasına run-server diyerek tomcat üzerinden localde çalıştırabiliriz.
 
-# Not
+# Bilgilendirme
 Uygulama resimlerine kanbagisiResimleri klasörü altından erişebilirsiniz.
