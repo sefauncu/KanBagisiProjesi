@@ -1,4 +1,4 @@
-# KanBagisiProjesi
+# Kan Bağışı Projesi
 JSF + Maven + JPA + Primefaces
 
 # Özet
