@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	
+	<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+	<title>Kan &amp; Bağışı</title>
+</h:head>
+<h:body>
+ <p:growl id="grow2" sticky="true" showDetail="true"/>
+<h:form>
+
+	<p:panelGrid columns="2" style="position:absolute; top:100px; left:500px;">
+		<f:facet name="header">Kayıt Ol</f:facet>
+		<h:outputText value="*Ad Soyad" />
+		<p:inputText  id="adSoyad" value="#{bagisciBean.bagisci.adSoyad}" required="true" requiredMessage="Ad ve Soyad Alanını Boş Bırakmayınız..." />
+		<h:outputText value="*Eposta" />
+		<p:inputText  id="mail" value="#{bagisciBean.bagisci.mail}" required="true" requiredMessage="Mail Alanını Boş Bırakmayınız..." validatorMessage="Mail Formatında Değil!">
+		<f:validateRegex
+		pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		</p:inputText>
+		<p:watermark for="mail"/>
+			<h:outputText value="" />
+		<h:outputText value="*Telefon" />
+		<p:inputMask type="number"  id="telefon" mask="(999) 999-9999" validatorMessage="Sayı Girmelisin!"  value="#{bagisciBean.bagisci.telefon}" required="true" requiredMessage="Telefon Alanını Boş Bırakmayınız..."/>
+		<h:outputText value="*Adres" />
+        <p:inputText  id="adres"  value="#{bagisciBean.bagisci.adres}" required="true" requiredMessage="Adres Alanını Boş Bırakmayınız..." />
+        <h:outputText value="*Kan Grubu (Örn. ARh+,0Rh-)" />
+		<p:inputText id="kanGrubu" value="#{bagisciBean.bagisci.kanGrubu}" required="true" requiredMessage="Kan Grubu Alanını Boş Bırakmayınız..."/>
+		<h:outputText value="*Çocukken en yakın`arkadaşınız?" />
+		<p:inputText id="kullaniciMesaj" value="#{bagisciBean.bagisci.kullaniciMesaj}" required="true" requiredMessage="Mesaj Alanını Boş Bırakmayınız..."/>
+		<h:outputText style="color:blue;" value="Zorunlu Alanlar * ile Belirtilmiştir." />
+		<h:outputText value="" ></h:outputText>
+			<h:outputText value="" ></h:outputText>
+			
+		<h:column>
+		 <h:commandButton value="Kayıt Ol" action="#{bagisciBean.addBagisci}"></h:commandButton>
+		 <h:commandButton type="reset" value="Temizle"  update="bir" process="@this" actionListener="#{bagisciBean.reset}"/>
+		<h:inputHidden value="#{bagisciBean.bagisci.id}" />
+		
+		<h:inputHidden  id="kullaniciSifre"  value="#{bagisciBean.bagisci.randomDeger2}" />
+		<h:inputHidden id="kullaniciAdi" value="#{bagisciBean.bagisci.randomDeger}" />
+		</h:column>
+	
+
+	</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+	<title>Kan &amp; Bağışı</title>
+</h:head>
+<h:body>
+<h:form>
+
+		<p:panelGrid columns="2" style="position:absolute; top:100px; left:300px;">
+		<f:facet name="header">Bağışçı Bilgileri</f:facet>
+		<h:outputText style="color:blue;" value="***Lütfen kullancı adı ve Şifrenizi Not Edin***" />
+		<h:outputText style="color:blue;" value="***Çünkü Giriş İçin Yardımcı Olacak***" />
+		<h:outputText value="Kullanici Adi"/>
+		<h:outputText style="color:red;" value="#{bagisciBean.bagisci.kullaniciAdi}" />
+		<h:outputText value="Kullanici Şifre"/>
+		<h:outputText style="color:red;" value="#{bagisciBean.bagisci.kullaniciSifre}" />
+		
+		 
+		
+		<h:outputText value="Ad Soyad"/>
+		<h:outputText value="#{bagisciBean.bagisci.adSoyad}" />
+			<h:outputText value="Mail" />
+		<h:outputText value="#{bagisciBean.bagisci.mail}" />
+			<h:outputText value="Adres" />
+		<h:outputText value="#{bagisciBean.bagisci.adres}" />
+			<h:outputText value="Telefon" />
+		<h:outputText value="#{bagisciBean.bagisci.telefon}" />
+			<h:outputText value="Kan Grubu" />
+		<h:outputText value="#{bagisciBean.bagisci.kanGrubu}" />
+		
+				<h:outputText value="Çocukken en yakın`arkadaşınız?" />
+		<h:outputText value="#{bagisciBean.bagisci.kullaniciMesaj}" />
+		
+		<f:facet name="footer">
+		<p:commandButton value="Anasayfa" action="special.xhtml?faces-redirect=true" ></p:commandButton>
+		
+	 	
+			 	<p:commandButton value="Bilgileri Sil Düzenle" action="list"  ></p:commandButton>
+			 	
+				 <p:commandButton value="Çıkış" action="#{bagisciBean.logout}" ></p:commandButton> 
+				 
+		</f:facet>
+		</p:panelGrid>
+		
+		
+	</h:form>
+
+
+	</h:body>
+</html>

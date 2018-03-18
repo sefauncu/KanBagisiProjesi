@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+ <title>Kan &amp; Bağışı</title>
+        <style>
+            tr,th,td{border: solid 1px}
+            table{width: 70%; margin: auto;}
+            form,h1{text-align: center}
+        </style>
+    </h:head>
+    <h:body>
+        <h1 style="color:green;">Tebrikler Başarılı :)</h1>
+        <f:view>
+            <h:form>
+                
+                <h:dataTable value="#{bagisciBean.listBagiscilar}" var="item">
+                         
+             
+                <h:column>
+                        <p:commandLink value="Giriş Bilgilerini Düzenle" actionListener="#{bagisciBean.bagisci.getBagisciPassword(item.id, item.kullaniciAdi, item.kullaniciSifre)}" action="editpass"></p:commandLink><br></br>
+                      </h:column>
+                    
+                 
+                    
+                </h:dataTable>
+                	
+            </h:form>
+        </f:view>
+   
+
+    </h:body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	
+	<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+	<title>Kan &amp; Bağışı</title>
+</h:head>
+<h:body>
+
+<h:form>
+   
+	<p:panelGrid columns="2" style="position:absolute; top:150px; left:500px;">
+		<f:facet name="header">Düzenle</f:facet>
+		<h:outputText value="*Ad Soyad" />
+		<p:inputText  id="adSoyad" value="#{bagisciBean.bagisci.adSoyad}" required="true" requiredMessage="Ad ve Soyad Alanını Boş Bırakmayınız..." />
+			<h:outputText value="*Eposta" />
+		<p:inputText  id="mail" value="#{bagisciBean.bagisci.mail}" required="true" requiredMessage="Mail Alanını Boş Bırakmayınız..." validatorMessage="Mail Formatında Değil!">
+			<f:validateRegex
+		pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		</p:inputText>
+		<p:watermark for="mail"/>
+			<h:outputText value="" />
+			<h:outputText value="*Telefon" />
+		<p:inputMask  id="telefon" value="#{bagisciBean.bagisci.telefon}" mask="(999) 999-9999"  required="true" requiredMessage="Telefon Alanını Boş Bırakmayınız..."/>
+			<h:outputText value="*Adres" />
+        <p:inputText id="adres"  value="#{bagisciBean.bagisci.adres}"  required="true" requiredMessage="Adres Alanını Boş Bırakmayınız..." />
+        <h:outputText value="*Kan Grubu (Örn. ARh+,0Rh-)" />
+		<p:inputText id="kanGrubu" value="#{bagisciBean.bagisci.kanGrubu}" required="true" requiredMessage="Kan Grubu Alanını Boş Bırakmayınız..."/>
+		 <h:outputText value="*Çocukken en yakın`arkadaşınız?" />
+		<p:inputText id="kullaniciMesaj" value="#{bagisciBean.bagisci.kullaniciMesaj}" required="true" requiredMessage="Mesaj Alanını Boş Bırakmayınız..."/>
+		<h:outputText style="color:blue;" value="Zorunlu Alanlar * ile Belirtilmiştir." />
+	    
+	    <h:commandButton value="Guncelle" actionListener="#{bagisciBean.bagisci.updateBagisci()}" action="info"></h:commandButton>
+		 
+	
+		<h:inputHidden value="#{bagisciBean.bagisci.id}" />
+		
+	
+		
+		<f:facet name="footer">
+		
+		
+	<p:commandButton value="Anasayfa" action="special.xhtml?faces-redirect=true" ></p:commandButton>
+				<p:commandButton value="Geri Dön" action="list.xhtml?faces-redirect=true" ></p:commandButton>
+					 <p:growl id="message" showDetail="true" />
+	     <p:commandButton value="Kaydı Sil" action="remove.xhtml?faces-redirect=true"  update="message">
+	     <p:confirm header="Bilgi" message="Silme Sayfasına Gitmek İstermisin?" icon="ui-icon-alert" />
+	    </p:commandButton>
+	     <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        <p:commandButton value="Evet" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="Hayır" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+		</f:facet>
+		
+		
+	
+	</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>

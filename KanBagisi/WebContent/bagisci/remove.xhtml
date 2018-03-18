@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	
+	<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+	<title>Kan &amp; Bağışı</title>
+</h:head>
+<h:body  style="background-color:black;">
+ <p:growl id="grow1" sticky="true" showDetail="true"/>
+<h:form>
+	
+		<p:panelGrid columns="2" style="position:absolute; width:300px; top:250px; left:500px;">
+		<f:facet name="header">Eminsen Onayla :)</f:facet>
+	 
+	
+		
+		<f:facet name="footer">
+	    <h:commandButton style="color:red;" value="Sil" actionListener="#{bagisciBean.bagisci.updatePassword()}"  action="#{bagisciBean.logout}"></h:commandButton> 
+	 
+	
+	  	 <h:inputHidden id="id" value="#{bagisciBean.bagisci.id}"/>
+	 	<h:inputHidden id="kullaniciAdi"  value="#{bagisciBean.bagisci.geciciAd}"/>
+	 	<h:inputHidden id="kullaniciSifre" value="#{bagisciBean.bagisci.geciciSifre}" />
+		</f:facet>
+		</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>

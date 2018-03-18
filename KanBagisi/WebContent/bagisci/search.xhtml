@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+    <h:head>
+       <title>Kan &amp; Bağışı</title>
+        <style>
+            tr,th,td{border: solid 1px}
+            table{width: 70%; margin: auto;}
+            form,h1{text-align: center}
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Kan Bağışı Ara</h1>
+       <f:view>
+            <h:form>
+            <p:outputLabel style="color:blue;" value="Kan Grubunuzu Giriniz.(Örn. ARh+,0Rh-)"></p:outputLabel>
+                <p:inputText  value="#{bagisciBean.search}"></p:inputText>
+                <h:commandButton value="Ara" ></h:commandButton>
+            </h:form>
+        </f:view>
+        <br></br>
+         <f:view>
+            <h:form>
+            
+            
+                <h:dataTable value="#{bagisciBean.searchBagisci}" var="item">
+                    
+               
+                    <h:column>
+                        <f:facet name="header">Ad Soyad</f:facet>
+                        <h:outputText value="#{item.adSoyad}"></h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Mail</f:facet>
+                        <h:outputText value="#{item.mail}"></h:outputText>
+                    </h:column>
+                     <h:column>
+                        <f:facet name="header">Kan Grubu</f:facet>
+                        <h:outputText value="#{item.kanGrubu}"></h:outputText>
+                    </h:column>
+                         <h:column>
+                       <p:commandButton value="Gör" onclick="PF('wdialog').show();"/>
+                    </h:column>
+                    
+                   
+                </h:dataTable>
+             
+                   <p:dialog id="dialog" widgetVar="wdialog">
+                  <h:dataTable value="#{bagisciBean.searchBagisci}" var="item">
+                    
+                    <h:column>
+                        <f:facet name="header">Telefon</f:facet>
+                        <h:outputText value="#{item.telefon}"></h:outputText>
+                    </h:column>
+                      <h:column>
+                        <f:facet name="header">Adres</f:facet>
+                        <h:outputText value="#{item.adres}"></h:outputText>
+                    </h:column>
+                    </h:dataTable>
+                  </p:dialog>
+                  
+    <p:commandButton value="Anasayfa" actionListener="#{bagisciBean.logout}" action="index.xhtml?faces-redirect=true" ></p:commandButton> 
+            </h:form>
+            	
+        </f:view>
+    </h:body>
+</html>

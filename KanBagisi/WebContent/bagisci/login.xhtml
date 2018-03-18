@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	
+	<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+	<title>Kan &amp; Bağışı</title>
+</h:head>
+<h:body  style="background-color:black;">
+ <p:growl id="grow1" sticky="true" showDetail="true"/>
+<h:form>
+	
+		<p:panelGrid columns="2" style="position:absolute; top:250px; left:500px;">
+		<f:facet name="header">Giriş Yap</f:facet>
+		<h:outputText value="Kullanıcı Adı" />
+		<p:inputText value="#{bagisciBean.bagisci.kullaniciAdi}" requiredMessage="Kullanıcı Adı Alanını Boş Bırakmayınız..." />
+			<h:outputText value="Kullanıcı Şifre" />
+		<p:password value="#{bagisciBean.bagisci.kullaniciSifre}" requiredMessage="Parola Alanını Boş Bırakmayınız..."  />
+		
+		
+		
+		<f:facet name="footer">
+	<p:commandButton value="Giris Yap" action="#{bagisciBean.login(bagisciBean.bagisci.id)}" ></p:commandButton>
+		 <p:commandButton type="reset" value="Temizle"  update="bir" process="@this" actionListener="#{bagisciBean.reset}"/> 
+		 	
+		<h:commandLink value="Şifremi Unuttum" action="loginforgot.xhtml?faces-redirect=true" ></h:commandLink>
+		</f:facet>
+		</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>
