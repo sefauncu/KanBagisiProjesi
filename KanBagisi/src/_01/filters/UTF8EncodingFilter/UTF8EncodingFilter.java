@@ -7,6 +7,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 
 public class UTF8EncodingFilter implements Filter {
 
